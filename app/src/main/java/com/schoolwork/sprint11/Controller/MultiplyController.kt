@@ -1,5 +1,6 @@
 package com.schoolwork.sprint11.Controller
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +24,8 @@ class MultiplyController: BaseController(){
         changeType: ControllerChangeType
     ) {
         super.onChangeStarted(changeHandler, changeType)
+
+        val bundle = Bundle()
 
         view?.findViewById<Button>(R.id.btn_multiply)?.setOnClickListener {
 
@@ -55,8 +58,10 @@ class MultiplyController: BaseController(){
                     val numBBL = stringBBL.toInt()
                     val numBBR = stringBBR.toInt()
 
+                    bundle.putInt("key", 36)
+
                     router.pushController(
-                        RouterTransaction.with(ResultController())
+                        RouterTransaction.with(ResultController(bundle))
                             .pushChangeHandler(HorizontalChangeHandler())
                             .popChangeHandler(HorizontalChangeHandler())
                     )
