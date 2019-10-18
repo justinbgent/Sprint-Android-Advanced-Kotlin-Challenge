@@ -12,7 +12,7 @@ import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
 import com.schoolwork.sprint11.R
 import com.schoolwork.sprint11.makeToast
 
-class MultiplyController(): BaseController(){
+class MultiplyController: BaseController(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         return inflater.inflate(R.layout.multiply_controller, container, false)
