@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.bluelinelabs.conductor.ControllerChangeHandler
 import com.bluelinelabs.conductor.ControllerChangeType
+import com.schoolwork.sprint11.R
 
 class MultiplyController: BaseController(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return inflater.inflate(R.layout.multiply_controller, container, false)
     }
 
     override fun onChangeStarted(
