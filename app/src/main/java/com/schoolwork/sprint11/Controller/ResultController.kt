@@ -3,12 +3,14 @@ package com.schoolwork.sprint11.Controller
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.bluelinelabs.conductor.ControllerChangeHandler
 import com.bluelinelabs.conductor.ControllerChangeType
+import com.schoolwork.sprint11.R
 
 class ResultController: BaseController(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return inflater.inflate(R.layout.result_controller, container, false)
     }
 
     override fun onChangeStarted(
@@ -16,5 +18,10 @@ class ResultController: BaseController(){
         changeType: ControllerChangeType
     ) {
         super.onChangeStarted(changeHandler, changeType)
+
+        view?.findViewById<TextView>(R.id.top_left_txt)
+        view?.findViewById<TextView>(R.id.top_right_txt)
+        view?.findViewById<TextView>(R.id.bot_left_txt)
+        view?.findViewById<TextView>(R.id.bot_right_txt)
     }
 }
