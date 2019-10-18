@@ -1,8 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/result_controller_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/top_left_txt"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="Test"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintRight_toLeftOf="@+id/top_right_txt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bot_left_txt"/>
+
+    <TextView
+        android:id="@+id/bot_left_txt"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="Test"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_left_txt"
+        app:layout_constraintRight_toLeftOf="@+id/bot_right_txt"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/top_right_txt"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="Test"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bot_right_txt"
+        app:layout_constraintLeft_toRightOf="@+id/top_left_txt"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/bot_right_txt"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="Test"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_right_txt"
+        app:layout_constraintLeft_toRightOf="@+id/bot_left_txt"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
