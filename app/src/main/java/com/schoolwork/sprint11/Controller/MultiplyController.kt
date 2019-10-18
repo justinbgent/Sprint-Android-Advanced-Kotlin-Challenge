@@ -10,8 +10,9 @@ import com.bluelinelabs.conductor.ControllerChangeHandler
 import com.bluelinelabs.conductor.ControllerChangeType
 import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
-import com.schoolwork.sprint11.R
-import com.schoolwork.sprint11.makeToast
+import com.schoolwork.sprint11.*
+
+// TODO: Refactor
 
 class MultiplyController: BaseController(){
 
@@ -49,16 +50,23 @@ class MultiplyController: BaseController(){
                 activity?.makeToast("All fields are required")
             }else{
                 try {
-                    val numTTL = stringTTL.toInt()
-                    val numTTR = stringTTR.toInt()
-                    val numTBL = stringTBL.toInt()
-                    val numTBR = stringTBR.toInt()
-                    val numBTL = stringBTL.toInt()
-                    val numBTR = stringBTR.toInt()
-                    val numBBL = stringBBL.toInt()
-                    val numBBR = stringBBR.toInt()
+                    val matrixStart = CustomMatrix(2, 2).initialMatrix
+                    val matrix1Start = CustomMatrix(2, 2).initialMatrix
+                    var matrix = MatrixCustom(matrixStart)
+                    var matrix1 = MatrixCustom(matrix1Start)
 
-                    bundle.putInt("key", 36)
+                    matrix.matrix[0][0] = stringTTL.toInt()
+                    matrix.matrix[0][1] = stringTTR.toInt()
+                    matrix.matrix[1][0] = stringTBL.toInt()
+                    matrix.matrix[1][1] = stringTBR.toInt()
+                    matrix1.matrix[0][0] = stringBTL.toInt()
+                    matrix1.matrix[0][1] = stringBTR.toInt()
+                    matrix1.matrix[1][0] = stringBBL.toInt()
+                    matrix1.matrix[1][1] = stringBBR.toInt()
+
+                    var result = (matrix * matrix1)
+
+                    bundle.putIntArray("key", result)
 
                     router.pushController(
                         RouterTransaction.with(ResultController(bundle))

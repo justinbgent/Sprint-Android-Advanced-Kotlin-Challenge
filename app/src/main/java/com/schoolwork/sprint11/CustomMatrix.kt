@@ -1,31 +1,41 @@
 package com.schoolwork.sprint11
 
+// TODO: Refactor
+
 class CustomMatrix(width: Int, height: Int) {
     var initialMatrix = Array(width){IntArray(height)}
 }
 
-data class MatrixCustom(var matrix: Array<IntArray>) {
-    operator fun times(matrix1: Array<IntArray>){
-        val columnSize = matrix.size
-        val rowSize = matrix[0].size
+operator fun MatrixCustom.times(matrixC: MatrixCustom): IntArray{
+    val columnSize = matrix.size
+    val rowSize = matrix[0].size
 
-        val columnSize1 = matrix1.size
-        val rowSize1 = matrix1[0].size
+    val matrix1 = matrixC.matrix
 
-        var results = arrayListOf<Int>()
+    var results = arrayListOf<Int>()
 
-        for (i in 0 until columnSize){
-            for (j in 0 until rowSize){
-                val product = matrix[i][j] * matrix1[i][j]
-                results.add(product)
-            }
+    for (i in 0 until columnSize){
+        for (j in 0 until rowSize){
+            val product = matrix[i][j] * matrix1[i][j]
+            results.add(product)
         }
-
-        arrayOf(intArrayOf(4, 4),
-            intArrayOf(2, 4))
-
-        //return Array<IntArray>
     }
+
+
+    var info = IntArray(4)
+    for (i in 0 until results.size){
+        info[i] = results[i]
+    }
+
+    return info
+
+//    return MatrixCustom(arrayOf(intArrayOf(results[0], results[1]),
+//        intArrayOf(results[2], results[3])))
+
+    //return Array<IntArray>
+}
+
+data class MatrixCustom(var matrix: Array<IntArray>) {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
