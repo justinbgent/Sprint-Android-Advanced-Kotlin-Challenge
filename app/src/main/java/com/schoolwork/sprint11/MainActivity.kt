@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
+import com.schoolwork.sprint11.Controller.MultiplyController
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         router = Conductor.attachRouter(this, layout_constraint_main, savedInstanceState)
 
         if (!router.hasRootController()) {
-            router.setRoot(RouterTransaction.with(/*TODO MultiplyController()*/))
+            router.setRoot(RouterTransaction.with(MultiplyController()))
         }
     }
 
