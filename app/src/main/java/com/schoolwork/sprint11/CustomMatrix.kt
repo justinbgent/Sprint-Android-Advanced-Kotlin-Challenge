@@ -14,25 +14,30 @@ operator fun MatrixCustom.times(matrixC: MatrixCustom): IntArray{
 
     var results = arrayListOf<Int>()
 
+    val product = Array(2){IntArray(2)}
     for (i in 0 until columnSize){
         for (j in 0 until rowSize){
-            val product = matrix[i][j] * matrix1[i][j]
-            results.add(product)
+            for (k in 0 until columnSize){
+                if (j == 0){
+                    product[j][i] += matrix[k][i] * matrix1[i][k]
+                }
+                else{
+                    product[j][i] += matrix[k][i] * matrix1[i][k]
+                }
+//                val product = matrix[k][i] * matrix1[i][k]
+//                results.add(product)
+            }
         }
     }
 
-
     var info = IntArray(4)
-    for (i in 0 until results.size){
-        info[i] = results[i]
-    }
+
+    info[0] = results[0] + results[1]
+    info[1] = results[2] + results[3]
+    info[2] = results[4] + results[5]
+    info[3] = results[6] + results[7]
 
     return info
-
-//    return MatrixCustom(arrayOf(intArrayOf(results[0], results[1]),
-//        intArrayOf(results[2], results[3])))
-
-    //return Array<IntArray>
 }
 
 data class MatrixCustom(var matrix: Array<IntArray>) {

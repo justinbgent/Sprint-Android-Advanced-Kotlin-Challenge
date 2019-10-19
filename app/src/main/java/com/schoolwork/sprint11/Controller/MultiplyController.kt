@@ -52,19 +52,20 @@ class MultiplyController: BaseController(){
                 try {
                     val matrixStart = CustomMatrix(2, 2).initialMatrix
                     val matrix1Start = CustomMatrix(2, 2).initialMatrix
-                    var matrix = MatrixCustom(matrixStart)
-                    var matrix1 = MatrixCustom(matrix1Start)
+                    val matrix = MatrixCustom(matrixStart)
+                    val matrix1 = MatrixCustom(matrix1Start)
 
                     matrix.matrix[0][0] = stringTTL.toInt()
-                    matrix.matrix[0][1] = stringTTR.toInt()
-                    matrix.matrix[1][0] = stringTBL.toInt()
+                    matrix.matrix[1][0] = stringTTR.toInt()
+                    matrix.matrix[0][1] = stringTBL.toInt()
                     matrix.matrix[1][1] = stringTBR.toInt()
+
                     matrix1.matrix[0][0] = stringBTL.toInt()
-                    matrix1.matrix[0][1] = stringBTR.toInt()
-                    matrix1.matrix[1][0] = stringBBL.toInt()
+                    matrix1.matrix[1][0] = stringBTR.toInt()
+                    matrix1.matrix[0][1] = stringBBL.toInt()
                     matrix1.matrix[1][1] = stringBBR.toInt()
 
-                    var result = (matrix * matrix1)
+                    val result = (matrix * matrix1)
 
                     bundle.putIntArray("key", result)
 
