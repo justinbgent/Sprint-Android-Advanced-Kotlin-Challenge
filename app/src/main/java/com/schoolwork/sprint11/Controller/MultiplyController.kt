@@ -50,22 +50,22 @@ class MultiplyController: BaseController(){
                 activity?.makeToast("All fields are required")
             }else{
                 try {
-                    val matrixStart = CustomMatrix(2, 2).initialMatrix
-                    val matrix1Start = CustomMatrix(2, 2).initialMatrix
-                    val matrix = MatrixCustom(matrixStart)
-                    val matrix1 = MatrixCustom(matrix1Start)
+                    val matrixCustom = MatrixCustom(2, 2)
+                    val matrixCustom1 = MatrixCustom(2, 2)
+                    val matrix = matrixCustom.matrix
+                    val matrix1 = matrixCustom1.matrix
 
-                    matrix.matrix[0][0] = stringTTL.toInt()
-                    matrix.matrix[1][0] = stringTTR.toInt()
-                    matrix.matrix[0][1] = stringTBL.toInt()
-                    matrix.matrix[1][1] = stringTBR.toInt()
+                    matrix[0][0] = stringTTL.toInt()
+                    matrix[1][0] = stringTTR.toInt()
+                    matrix[0][1] = stringTBL.toInt()
+                    matrix[1][1] = stringTBR.toInt()
 
-                    matrix1.matrix[0][0] = stringBTL.toInt()
-                    matrix1.matrix[1][0] = stringBTR.toInt()
-                    matrix1.matrix[0][1] = stringBBL.toInt()
-                    matrix1.matrix[1][1] = stringBBR.toInt()
+                    matrix1[0][0] = stringBTL.toInt()
+                    matrix1[1][0] = stringBTR.toInt()
+                    matrix1[0][1] = stringBBL.toInt()
+                    matrix1[1][1] = stringBBR.toInt()
 
-                    val result = (matrix * matrix1)
+                    val result = (matrixCustom * matrixCustom1)
 
                     bundle.putIntArray("key", result)
 
