@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/multiply_controller_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/top_top_left_num_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/top_bot_left_num_field"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/top_top_right_num_field"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/top_bot_left_num_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/btn_multiply"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/top_bot_right_num_field"
+            app:layout_constraintTop_toBottomOf="@+id/btn_multiply" />
+
+        <EditText
+            android:id="@+id/bot_top_left_num_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/bot_bot_left_num_field"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/bot_top_right_num_field"
+            app:layout_constraintTop_toBottomOf="@+id/btn_multiply" />
+
+        <EditText
+            android:id="@+id/bot_bot_left_num_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/bot_bot_right_num_field"
+            app:layout_constraintTop_toBottomOf="@+id/bot_top_left_num_field" />
+
+        <Button
+            android:id="@+id/btn_multiply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Multiply"
+            app:layout_constraintBottom_toTopOf="@+id/bot_top_left_num_field"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_bot_left_num_field" />
+
+
+        <EditText
+            android:id="@+id/top_top_right_num_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/top_bot_right_num_field"
+            app:layout_constraintLeft_toRightOf="@+id/top_top_left_num_field"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/top_bot_right_num_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/btn_multiply"
+            app:layout_constraintLeft_toRightOf="@+id/top_bot_left_num_field"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_top_right_num_field" />
+
+        <EditText
+            android:id="@+id/bot_top_right_num_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/bot_bot_right_num_field"
+            app:layout_constraintLeft_toRightOf="@+id/bot_top_left_num_field"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_multiply" />
+
+        <EditText
+            android:id="@+id/bot_bot_right_num_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/bot_bot_left_num_field"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bot_top_right_num_field" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
